@@ -1,6 +1,6 @@
 var subsDivsDisp = document.getElementById('dispSubDivs');
 var subsDivs = document.getElementById('numSubDivs');
-disp1.innerHTML = subsDivs;
+// disp1.innerHTML = subsDivs;
 
 function play() {
 
@@ -17,4 +17,16 @@ function play() {
     li.innerHTML = "Kick";
     li.classList.add("blue");
     ul.appendChild(li);
+}
+
+function playTrack(){
+
+    clapsUl = document.getElementById('claps');
+    clapBoxes = clapsUl.children;
+    console.log(clapsUl);
+    console.log(clapBoxes);
+    clapBoxes.forEach(function(clapBox){
+        clapBox.checked = true;
+    })
+
 }
