@@ -1,6 +1,6 @@
 ---BACKGROUND---
 
-DoughLoops will be a simple step-sequencer that allows users to make drum beats. They will have the ability to click on a grid to add or remove sounds that will be triggered at the appropriate time when users press the “Play” button. The pattern will be played on an infinite loop until users press the “Stop” button. Users will have the ability to adjust the volume of the different drum sounds, the tempo of the loop, the length of the loop, and the subdivisions of each beat. I currently intend to use Canvas and Web Audio API, though I need a better understanding of both before I can confirm that they are the best options for this application. 
+DoughLoops will be a simple step-sequencer that allows users to make drum beats. They will have the ability to click on a grid to add or remove sounds that will be triggered at the appropriate time when users press the “Play” button. The pattern will be played on an infinite loop until users press the “Stop” button. Users will have the ability to adjust the volume of the different drum sounds, the tempo of the loop, the length of the loop, and the number of subdivisions of each beat.
 
 ---FUNCTIONALITY AND MVPs---
 
@@ -34,8 +34,8 @@ Friday afternoon and weekend: Get webpack running successfully. Create a step se
 
 Monday: Have the step sequencer rendering audio as expected based on the state of buttons on the grid.
 
-Tuesday: Incorporate tempo and volume adjustment features. Begin experimenting with Web Audio API.
+Tuesday: Incorporate tempo and volume adjustment features. Stylize the project using CSS. Begin experimenting with Web Audio API.
 
-Wednesday: Incorporate simpl audio effects from Web Audio API (such as reverb) that can optionally be applied to the individual instruments.
+Wednesday: Incorporate simple audio effects from Web Audio API (such as reverb) that can optionally be applied to the individual instruments.
 
 Thursday morning: Deploy project to GitHub.
