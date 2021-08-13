@@ -20,9 +20,7 @@ With the DoughLoops step sequencer, users will be able to:
 
 ---WIREFRAMES---
 
-
-
-
+<img width="1440" alt="wireframe" src="https://user-images.githubusercontent.com/53061472/129284939-1d166c8a-ba06-455a-8872-33f329108ad7.png">
 
 ---TECHNOLOGIES, LIBRARIES, AND APIs---
 
