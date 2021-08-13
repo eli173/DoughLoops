@@ -6,4 +6,38 @@ DoughLoops will be a simple step-sequencer that allows users to make drum beats.
 
 With the DoughLoops step sequencer, users will be able to:
 
- - Start and Stop Tracks
+ - Start and stop their loops
+ - Select squares on the step sequencer grid to create unique drum patterns
+ - Edit the length of the pattern and the number of subdivisions per beat
+ - Adjust the tempo of the main track and the volume of the individual instruments
+ - Add audio effects to the individual instruments
+
+ In addition, this project will include:
+
+ - An instructions tab explaining how to use the step sequencer
+ - A production README
+ - Links to my LinkedIn and GitHub
+
+---WIREFRAMES---
+
+
+
+
+
+---TECHNOLOGIES, LIBRARIES, AND APIs---
+
+This project will be implemented with the following technologies:
+ 
+ - The Web Audio API to add audio effects to the drum sounds
+
+---IMPLEMENTATION TIMELINE---
+
+Friday afternoon and weekend: Get webpack running successfully. Create a step sequencer grid based on the user's input for the "# of beats" and "# of subdivisions" fields.
+
+Monday: Have the step sequencer rendering audio as expected based on the state of buttons on the grid.
+
+Tuesday: Incorporate tempo and volume adjustment features. Begin experimenting with Web Audio API.
+
+Wednesday: Incorporate simpl audio effects from Web Audio API (such as reverb) that can optionally be applied to the individual instruments.
+
+Thursday morning: Deploy project to GitHub.
