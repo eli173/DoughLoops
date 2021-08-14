@@ -21,11 +21,20 @@ var subsDivs = document.getElementById('numSubDivs');
 
 import Master from './classes/master.js';
 import Player from './classes/player.js';
+import BeatsInfo from './classes/beats_info';
 
 document.addEventListener("DOMContentLoaded", function () {
+    let numSubDivs = document.getElementById('numSubDivs');
+    let dispSubDivs = document.getElementById('dispSubDivs');
+    let numBeats = document.getElementById('numBeats');
+    let dispNumBeats = document.getElementById('dispNumBeats');
+    let beatsInfo = new BeatsInfo(numBeats,dispNumBeats,numSubDivs,dispSubDivs);
+    console.log('hi');
+
     let instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
     let master = new Master();
     let player = new Player(instrumentSeqs,master);
+
     master.setPlayer(player);
     let stopButton = document.getElementById('stopButton');
     let startButton = document.getElementById('startButton');
