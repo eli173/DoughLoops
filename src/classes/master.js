@@ -1,21 +1,25 @@
 class Master {
-    constructor(player) {
+    constructor() {
         this.trackPlaying = false;
-        this.player = player;
     }
 
     stop(){
         this.trackPlaying = false;
         console.log("STOP");
+        console.log(this.trackPlaying);
     }
 
     start(){
         this.trackPlaying = true;
-        console.log("awef;awefhui");
-        console.log(this.player);
-        this.player.playInstruments.bind(this.player)();
+        this.player.resetLastTime();
+        this.player.resetStep();
+        console.log("START");
+        console.log(this.trackPlaying);
     }
 
+    setPlayer(player){
+        this.player = player;
+    }
 
 }
 

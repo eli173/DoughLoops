@@ -1,44 +1,54 @@
 class Player {
 
-    constructor(instrumentSeqs){
+    constructor(instrumentSeqs,master){
         this.instrumentSeqs = instrumentSeqs
+        this.master = master;
+        console.log(this.master);
+        this.lastTime = Date.now();
+        this.step = 0;
+    }
+
+    resetLastTime(){
+        this.lastTime = Date.now()-500;
+    }
+
+    resetStep(){
+        this.step = 0;
     }
 
     playInstruments() {
-        let i = 0;
-        let interval = 400;
-        let lastTime = Date.now();
-        console.log("hi");
-        while (this.trackPlaying) {
+        let interval = 500;
+        if(this.master.trackPlaying){
             let currentTime = Date.now();
-            if (lastTime + interval < currentTime) {
-                this.playStep(i);
-                if (i < 3) {
-                    i++;
+            if (this.lastTime + interval < currentTime) {
+                console.log('check');
+                this.playStep(this.step);
+                if (this.step < 3) {
+                    this.step++;
                 } else {
-                    i = 0;
+                    this.step = 0;
                 }
-                lastTime += interval;
+                this.lastTime += interval;
             }
         }
+        
     }
 
-    playStep(i) {
-        console.log(this.instrumentSeqs);
+    playStep(step) {
         for (let i = 0; i < this.instrumentSeqs.length; i++) {
-            console.log(this.instrumentSeqs[i]);
+            let instrumentBoxes = this.instrumentSeqs[i].children;
+            let instrumentBox = instrumentBoxes[step];
+            if(instrumentBox.checked){
+                let audioNamePlural = this.instrumentSeqs[i].id
+                let audioName = audioNamePlural.slice(0, audioNamePlural.length-1)+'1';
+                console.log(audioName);
+                var audio = document.getElementById(audioName);
+                var vol = document.getElementById('vol');
+                audio.currentTime = 0;
+                audio.volume = 0.01 * vol.value;
+                audio.play();
+            }
         }
-
-        // let clapBoxes = clapsUl.children;
-
-        // if (clapBoxes[i].checked) {
-        //     var volume = document.getElementById('vol');
-        //     var audio = document.getElementById('clap');
-        //     audio.currentTime = 0;
-        //     // console.log(0.01 * volume.value);
-        //     audio.volume = 0.01 * volume.value;
-        //     audio.play();
-        // }
     }
 
 

@@ -23,14 +23,17 @@ import Master from './classes/master.js';
 import Player from './classes/player.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-    let instrumentSeqs = document.querySelectorAll('#instrumentSeqs > *');
-    let player = new Player(instrumentSeqs);
-    let master = new Master(player);
+    let instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
+    let master = new Master();
+    let player = new Player(instrumentSeqs,master);
+    master.setPlayer(player);
     let stopButton = document.getElementById('stopButton');
     let startButton = document.getElementById('startButton');
+    let shitButton = document.getElementById('shitButton');
     console.log(instrumentSeqs);
     stopButton.addEventListener('click', master.stop.bind(master));
     startButton.addEventListener('click', master.start.bind(master));
+    setInterval(player.playInstruments.bind(player),100);
     log1(master);
 });
 
