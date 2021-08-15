@@ -1,15 +1,19 @@
 class Player {
 
-    constructor(instrumentSeqs,master){
-        this.instrumentSeqs = instrumentSeqs
+    constructor(master){
+        this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
         this.master = master;
-        console.log(this.master);
         this.lastTime = Date.now();
         this.step = 0;
     }
 
+    setBeatsInfo(beatsInfo){
+        this.beatsInfo = beatsInfo;
+    }
+
     resetLastTime(){
-        this.lastTime = Date.now()-500;
+        // console.log(this.beatsInfo.tempo.value);
+        this.lastTime = Date.now() - parseInt(this.beatsInfo.tempo.value);
     }
 
     resetStep(){
@@ -17,21 +21,28 @@ class Player {
     }
 
     playInstruments() {
-        let interval = 500;
+        // let interval = 500;
+        let interval = parseInt(this.beatsInfo.tempo.value);
+        // console.log(interval);
         if(this.master.trackPlaying){
             let currentTime = Date.now();
+
+            // console.log(this.lastTime);
+            // console.log(currentTime);
+            // console.log(typeof (currentTime+interval));
+
             if (this.lastTime + interval < currentTime) {
                 console.log('check');
                 this.playStep(this.step);
-                if (this.step < 3) {
+                if (this.step < parseInt(this.beatsInfo.numBeats.value)*parseInt(this.beatsInfo.numSubDivs.value)-1) {
                     this.step++;
                 } else {
                     this.step = 0;
                 }
-                this.lastTime += interval;
+                console.log(this.step)
+                this.lastTime += parseInt(this.beatsInfo.tempo.value);
             }
         }
-        
     }
 
     playStep(step) {

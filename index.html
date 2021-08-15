@@ -15,22 +15,25 @@
     <div class='playKick'>
 
         <ul id="audioSamples">
-            <audio id="clap1" src="./src/drums/clap.mp3"></audio>
             <audio id="kick1" src="./src/drums/kick.mp3"></audio>
+            <audio id="clap1" src="./src/drums/clap.mp3"></audio>
+            <audio id="snare1" src="./src/drums/snare.mp3"></audio>
+            <audio id="hat1" src="./src/drums/hat.mp3"></audio>
+            <audio id="rim1" src="./src/drums/rim.mp3"></audio>
         </ul>
         <ul>
             <label># of subdivisions
-                <input type="range" id="numSubDivs" name="numSubDivs" min="1" max="8">
-                <div id="dispSubDivs"></div>
+                <input type="range" id="numSubDivs" name="numSubDivs" min="1" max="8" value="4">
+                <div id="dispSubDivs">4</div>
             </label>
             <br>
             <label># of beats
-                <input type="range" id="numBeats" name="numBeats" min="1" max="8">
-                <div id="dispNumBeats"></div>
+                <input type="range" id="numBeats" name="numBeats" min="1" max="8" value="4">
+                <div id="dispNumBeats">4</div>
             </label>
             <br>
             <label>Tempo
-                <input type="range" id="tempo" name="tempo" min="30" max="300">
+                <input type="range" id="tempo" name="tempo" min="30" max="500" value ="500">
             </label>
         </ul>
 
@@ -47,19 +50,26 @@
         <div id="instrumentSeqs">
             <label>Kick
                 <div id="kicks">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
                 </div>
             </label>
 
-            <label>Claps
+            <label>Clap
                 <div id="claps">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
-                    <input type="checkbox">
+                </div>
+            </label>
+
+            <label>Snare
+                <div id="snares">
+                </div>
+            </label>
+
+            <label>Hat
+                <div id="hats">
+                </div>
+            </label>
+
+            <label>Rim
+                <div id="rims">
                 </div>
             </label>
         </div>

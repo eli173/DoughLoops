@@ -1,55 +1,18 @@
-var subsDivsDisp = document.getElementById('dispSubDivs');
-var subsDivs = document.getElementById('numSubDivs');
-// disp1.innerHTML = subsDivs;
-
-// function play() {
-
-//     var volume = document.getElementById('vol');
-//     var audio = document.getElementById('kick');
-//     audio.currentTime = 0;
-//     console.log(0.01 * volume.value);
-//     audio.volume = 0.01*volume.value;
-//     audio.play();
-
-//     console.log("CLICKED");
-//     ul = document.getElementById('kicks');
-//     li = document.createElement("li");
-//     li.innerHTML = "Kick";
-//     li.classList.add("blue");
-//     ul.appendChild(li);
-// }
-
 import Master from './classes/master.js';
 import Player from './classes/player.js';
 import BeatsInfo from './classes/beats_info';
+import GridMaker from './classes/grid_maker';
 
 document.addEventListener("DOMContentLoaded", function () {
-    let numSubDivs = document.getElementById('numSubDivs');
-    let dispSubDivs = document.getElementById('dispSubDivs');
-    let numBeats = document.getElementById('numBeats');
-    let dispNumBeats = document.getElementById('dispNumBeats');
-    let beatsInfo = new BeatsInfo(numBeats,dispNumBeats,numSubDivs,dispSubDivs);
-    console.log('hi');
-
-    let instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
+    let gridMaker = new GridMaker();
     let master = new Master();
-    let player = new Player(instrumentSeqs,master);
-
+    let player = new Player(master);
+    let beatsInfo = new BeatsInfo(player,gridMaker);
     master.setPlayer(player);
+    player.setBeatsInfo(beatsInfo);
     let stopButton = document.getElementById('stopButton');
     let startButton = document.getElementById('startButton');
-    let shitButton = document.getElementById('shitButton');
-    console.log(instrumentSeqs);
     stopButton.addEventListener('click', master.stop.bind(master));
     startButton.addEventListener('click', master.start.bind(master));
-    setInterval(player.playInstruments.bind(player),100);
-    log1(master);
+    setInterval(player.playInstruments.bind(player),1);
 });
-
-
-
-function log1(m){
-    setInterval(function(){
-
-    },500);
-}
