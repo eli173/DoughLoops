@@ -47,7 +47,8 @@ class Player {
                 let audioNamePlural = this.instrumentSeqs[i].id
                 let audioNameSingular = audioNamePlural.slice(0,audioNamePlural.length-1);
                 let audioName = audioNamePlural.slice(0, audioNamePlural.length-1)+'1';
-                var audio = document.getElementById(audioName);
+                let audioSelector = document.getElementById(`${audioNameSingular}Selector`);
+                var audio = document.getElementById(`${audioSelector.value}`);
                 var masterVol = document.getElementById('masterVol');
                 var instrumentVol = document.getElementById(`${audioNameSingular}Vol`);
                 audio.currentTime = 0;
@@ -56,6 +57,7 @@ class Player {
             }
         }
     }
+
 }
 
 export default Player;
