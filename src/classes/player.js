@@ -2,6 +2,7 @@ class Player {
 
     constructor(master){
         this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
+        this.instrumentVols = document.querySelectorAll('#instrumentSeqs label input')
         this.master = master;
         this.lastTime = Date.now();
         this.step = 0;
@@ -12,8 +13,8 @@ class Player {
     }
 
     resetLastTime(){
-        // console.log(this.beatsInfo.tempo.value);
-        this.lastTime = Date.now() - parseInt(this.beatsInfo.tempo.value);
+        let interval = 1000 * 60 / parseInt(this.beatsInfo.numSubDivs.value) / (parseInt(this.beatsInfo.tempo.value));
+        this.lastTime = Date.now() - interval;
     }
 
     resetStep(){
@@ -21,16 +22,9 @@ class Player {
     }
 
     playInstruments() {
-        // let interval = 500;
-        let interval = parseInt(this.beatsInfo.tempo.value);
-        // console.log(interval);
+        let interval = 1000 * 60 / parseInt(this.beatsInfo.numSubDivs.value) / (parseInt(this.beatsInfo.tempo.value));
         if(this.master.trackPlaying){
             let currentTime = Date.now();
-
-            // console.log(this.lastTime);
-            // console.log(currentTime);
-            // console.log(typeof (currentTime+interval));
-
             if (this.lastTime + interval < currentTime) {
                 console.log('check');
                 this.playStep(this.step);
@@ -40,7 +34,7 @@ class Player {
                     this.step = 0;
                 }
                 console.log(this.step)
-                this.lastTime += parseInt(this.beatsInfo.tempo.value);
+                this.lastTime += 1000 * 60 / parseInt(this.beatsInfo.numSubDivs.value) / (parseInt(this.beatsInfo.tempo.value));
             }
         }
     }
@@ -51,12 +45,13 @@ class Player {
             let instrumentBox = instrumentBoxes[step];
             if(instrumentBox.checked){
                 let audioNamePlural = this.instrumentSeqs[i].id
+                let audioNameSingular = audioNamePlural.slice(0,audioNamePlural.length-1);
                 let audioName = audioNamePlural.slice(0, audioNamePlural.length-1)+'1';
-                console.log(audioName);
                 var audio = document.getElementById(audioName);
-                var vol = document.getElementById('vol');
+                var masterVol = document.getElementById('masterVol');
+                var instrumentVol = document.getElementById(`${audioNameSingular}Vol`);
                 audio.currentTime = 0;
-                audio.volume = 0.01 * vol.value;
+                audio.volume = (0.01 * masterVol.value)*(0.01 * instrumentVol.value);
                 audio.play();
             }
         }

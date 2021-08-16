@@ -33,14 +33,15 @@
             </label>
             <br>
             <label>Tempo
-                <input type="range" id="tempo" name="tempo" min="30" max="500" value ="500">
+                <input type="range" id="tempo" name="tempo" min="30" max="300" value ="80">
+                <div id="dispTempo">80</div>
             </label>
         </ul>
 
 
         <form>
             <label for="vol">Volume (between 0 and 100):</label>
-            <input type="range" id="vol" name="vol" min="0" max="100">
+            <input type="range" id="masterVol" name="masterVol" min="0" max="100" value="100">
         </form>
 
         <button id="startButton" >Play track</button>
@@ -49,26 +50,31 @@
 
         <div id="instrumentSeqs">
             <label>Kick
+                <input type="range" id="kickVol" name="kickVol" min="0" max="100" value="100">
                 <div id="kicks">
                 </div>
             </label>
 
             <label>Clap
+                <input type="range" id="clapVol" name="clapVol" min="0" max="100" value="100">
                 <div id="claps">
                 </div>
             </label>
 
             <label>Snare
+                <input type="range" id="snareVol" name="snareVol" min="0" max="100" value="100">
                 <div id="snares">
                 </div>
             </label>
 
             <label>Hat
+                <input type="range" id="hatVol" name="hatVol" min="0" max="100" value="100">
                 <div id="hats">
                 </div>
             </label>
 
             <label>Rim
+                <input type="range" id="rimVol" name="rimVol" min="0" max="100" value="100">
                 <div id="rims">
                 </div>
             </label>
