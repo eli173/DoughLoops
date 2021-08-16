@@ -41,7 +41,11 @@ class Player {
 
     playStep(step) {
         for (let i = 0; i < this.instrumentSeqs.length; i++) {
-            let instrumentBoxes = this.instrumentSeqs[i].children;
+            let instrumentDivs = this.instrumentSeqs[i].children;
+            let instrumentBoxes = [];
+            for(let divIndex = 0; divIndex < instrumentDivs.length; divIndex++){
+                instrumentBoxes.push(instrumentDivs[divIndex].children[0]);
+            }
             let instrumentBox = instrumentBoxes[step];
             if(instrumentBox.checked){
                 let audioNamePlural = this.instrumentSeqs[i].id

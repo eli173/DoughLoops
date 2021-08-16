@@ -1,0 +1,66 @@
+body {
+     background-color: black;
+     color: rgb(142, 93, 206)
+}
+
+label div {
+    display: flex;
+}
+
+
+.container {  
+  display: block;  
+  position: relative;  
+  padding-left: 10px;  
+  margin-bottom: 20px;  
+  cursor: pointer;  
+  font-size: 25px;  
+}
+
+
+/* Create a custom checkbox */  
+.mark {  
+  position: absolute;  
+  top: 0;  
+  left: 0;  
+  height: 20px;  
+  width: 20px;  
+  background-color: lightgray;  
+}  
+
+label {
+    display: flex;
+}
+
+.container {
+    border: 1px solid red;
+}
+
+.container:hover input ~ .mark {  
+  background-color: gray;  
+}  
+
+.container input:checked ~ .mark {  
+  background-color: blue;  
+}  
+
+.container:hover input:checked ~ .mark {  
+  background-color: rgb(100, 100, 255);  
+}  
+
+
+
+
+
+
+
+
+
+.volume {
+    width: 70px;
+}
+
+select {
+    position: absolute;
+    left: 30px;
+}

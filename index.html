@@ -58,17 +58,16 @@
 
 
         <form>
-            <label for="vol">Volume (between 0 and 100):</label>
+            <label for="vol">Master Volume</label>
             <input type="range" id="masterVol" name="masterVol" min="0" max="100" value="100">
         </form>
 
         <button id="startButton" >Play track</button>
         <button id="stopButton">Stop track</button>
-        <!-- <button id="myBtn">Stop track</button> -->
 
         <div id="instrumentSeqs">
             <label>Kick
-                <input type="range" id="kickVol" name="kickVol" min="0" max="100" value="100">
+                <input type="range" id="kickVol" name="kickVol" min="0" max="100" value="100" class="volume">
                 <select name="kickSelector" id="kickSelector">
                     <option value="kick1" selected="true">Kick 1</option>
                     <option value="kick2">Kick 2</option>
@@ -79,7 +78,7 @@
             </label>
 
             <label>Clap
-                <input type="range" id="clapVol" name="clapVol" min="0" max="100" value="100">
+                <input type="range" id="clapVol" name="clapVol" min="0" max="100" value="100" class="volume">
                 <select name="clapSelector" id="clapSelector">
                     <option value="clap1" selected="true">Clap 1</option>
                     <option value="clap2">Clap 2</option>
@@ -90,7 +89,7 @@
             </label>
 
             <label>Snare
-                <input type="range" id="snareVol" name="snareVol" min="0" max="100" value="100">
+                <input type="range" id="snareVol" name="snareVol" min="0" max="100" value="100" class="volume">
                 <select name="snareSelector" id="snareSelector">
                     <option value="snare1" selected="true">Snare 1</option>
                     <option value="snare2">Snare 2</option>
@@ -101,7 +100,7 @@
             </label>
 
             <label>Hat
-                <input type="range" id="hatVol" name="hatVol" min="0" max="100" value="100">
+                <input type="range" id="hatVol" name="hatVol" min="0" max="100" value="100" class="volume">
                 <select name="hatSelector" id="hatSelector">
                     <option value="hat1" selected="true">Hat 1</option>
                     <option value="hat2">Hat 2</option>
@@ -112,7 +111,7 @@
             </label>
 
             <label>Rim
-                <input type="range" id="rimVol" name="rimVol" min="0" max="100" value="100">
+                <input type="range" id="rimVol" name="rimVol" min="0" max="100" value="100" class="volume">
                 <select name="rimSelector" id="rimSelector">
                     <option value="rim1" selected="true">Rim 1</option>
                     <option value="rim2">Rim 2</option>
@@ -123,7 +122,7 @@
             </label>
 
             <label>Tom
-                <input type="range" id="tomVol" name="tomVol" min="0" max="100" value="100">
+                <input type="range" id="tomVol" name="tomVol" min="0" max="100" value="100" class="volume">
                 <select name="tomSelector" id="tomSelector">
                     <option value="tom1" selected="true">Tom 1</option>
                     <option value="tom2">Tom 2</option>
@@ -134,7 +133,7 @@
             </label>
 
             <label>Cymbal
-                <input type="range" id="cymbalVol" name="cymbalVol" min="0" max="100" value="100">
+                <input type="range" id="cymbalVol" name="cymbalVol" min="0" max="100" value="100" class="volume">
                 <select name="cymbalSelector" id="cymbalSelector">
                     <option value="cymbal1" selected="true">Cymbal 1</option>
                     <option value="cymbal2">Cymbal 2</option>
@@ -145,7 +144,7 @@
             </label>
 
             <label>Triangle
-                <input type="range" id="triangleVol" name="triangleVol" min="0" max="100" value="100">
+                <input type="range" id="triangleVol" name="triangleVol" min="0" max="100" value="100" class="volume">
                 <select name="triangleSelector" id="triangleSelector">
                     <option value="triangle1" selected="true">Triangle 1</option>
                 </select>
