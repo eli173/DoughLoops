@@ -1,10 +1,14 @@
 body {
-     background-color: black;
-     color: rgb(142, 93, 206)
+    background-color: black;
+    color: rgb(142, 93, 206);
+    font-family: 'Georama', sans-serif;
+    text-shadow: 2px 2px 4px #3200bd;
+    font-size: 18px;
 }
 
 #instrumentSeqs label {
     height: 31px;
+    margin-bottom: 3px;
 }
 
 #instrumentSeqs label div {
@@ -12,7 +16,6 @@ body {
     position: absolute;
     left: 300px;
 }
-
 
 .container {  
   display: block;  
@@ -34,11 +37,14 @@ body {
   position: absolute;  
   top: 0;  
   left: 0;  
-  height: 29px;  
-  width: 29px;  
-  border-radius: 5px;
+  height: 31px;  
+  width: 30px;  
+  border-radius: 2px;
   background-color: rgb(54, 0, 45);  
   z-index: -1;
+
+  box-shadow: -1px 2px 6px rgb(250, 0, 196) inset;
+
 }  
 
 label {
@@ -51,7 +57,7 @@ label {
 }
 
 .offBeat {
-    border: 2px solid rgb(158, 63, 0);
+    border: 2px solid rgb(189, 76, 1);
     border-radius: 5px;
 }
 
@@ -73,20 +79,70 @@ label {
 }  
 
 
-
-
-
-
-
-
-
 .volume {
     position: absolute;
     left: 80px;
-    width: 70px;
+    width: 85px;
 }
 
 select {
     position: absolute;
     left: 200px;
+    background-color: rgb(68, 11, 201);
+    border-radius: 3px;
+    font-family: 'Georama', sans-serif;
+    color: white
+}
+
+ul label input {
+    position: absolute;
+    left: 150px;
+}
+
+ul label div {
+    position: absolute;
+    left: 300px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+button {
+  border-radius: 3px;
+  font-family: 'Georama', sans-serif;
+}
+
+#startButton{
+  background-color: rgb(38, 255, 0);
+  border-color: rgb(0, 160, 0);
+}
+
+#stopButton{
+  background-color: red;
+  border-color: rgb(168, 0, 0);
+}
+
+.links h1{
+  font-size: 30px;
+  color: rgb(214, 0, 186);
+  text-shadow: 1px 1px 2px #ffbb00;
+}
+
+.links a {
+  color: rgb(214, 0, 186);
+  text-shadow: 1px 1px 1px #ff00ff;
+  transition: color 1s, text-shadow 1s, font-size 1s;
+  font-size: 20px;
+}
+
+.links a:hover {
+  color: rgb(255, 103, 235);
+  text-shadow: 1px 1px 1px #ff5bb2;
+  font-size: 25px;
+}
+
+.links {
+  position: absolute;
+  bottom: 100px;
 }

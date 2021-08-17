@@ -5,8 +5,6 @@ class GridMaker {
     }
 
     updateGrid(numBeats,numSubDivs){
-        console.log(numBeats);
-        console.log(numSubDivs);
         for (let i = 0; i < this.instrumentSeqs.length; i++) {
             let instrumentSeq = this.instrumentSeqs[i];
             instrumentSeq.innerHTML = "";

@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <link rel="stylesheet" href="./src/styles/style1.css" />
+    <link rel="stylesheet" href="./src/styles/style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@600&display=swap" rel="stylesheet">
     <script src="./dist/main.js"></script>
     <title>DoughLoops</title>
 </head>
 
 <body>
-    <div class='playKick'>
+    <div>
 
         <ul id="audioSamples">
             <audio id="kick1" src="./src/drums/kick1.mp3"></audio>
@@ -50,19 +54,20 @@
                 <div id="dispNumBeats">4</div>
             </label>
             <br>
-            <label>Tempo
+            <label>Tempo (BPM)
                 <input type="range" id="tempo" name="tempo" min="30" max="300" value ="80">
-                <div id="dispTempo">80</div>
+                <div id="dispTempo">80</div>        
+            </label>
+            <br>
+            <label>Master Volume
+                <input type="range" id="masterVol" name="masterVol" min="0" max="100" value="100">
+                <div id="dispMasterVol">100</div>
             </label>
         </ul>
 
-        <form>
-            <label for="vol">Master Volume</label>
-            <input type="range" id="masterVol" name="masterVol" min="0" max="100" value="100">
-        </form>
 
-        <button id="startButton" >Play track</button>
-        <button id="stopButton">Stop track</button>
+        <button id="startButton" >Play</button>
+        <button id="stopButton">Stop</button>
 
 
         <br>
@@ -155,6 +160,13 @@
             </label>
 
         </div>
+
+        <ul class="links">
+            <h1>Evan Czako</h1>
+            <a href="">My Github</a>
+            <br>
+            <a href="">My LinkedIn</a>
+        </ul>
 
     </div>
 

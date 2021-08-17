@@ -27,14 +27,12 @@ class Player {
         if(this.master.trackPlaying){
             let currentTime = Date.now();
             if (this.lastTime + interval < currentTime) {
-                console.log('check');
                 this.playStep(this.step);
                 if (this.step < parseInt(this.beatsInfo.numBeats.value)*parseInt(this.beatsInfo.numSubDivs.value)-1) {
                     this.step++;
                 } else {
                     this.step = 0;
                 }
-                console.log(this.step)
                 this.lastTime += 1000 * 60 / parseInt(this.beatsInfo.numSubDivs.value) / (parseInt(this.beatsInfo.tempo.value));
             }
         }
