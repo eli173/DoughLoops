@@ -4,17 +4,22 @@ class Master {
     }
 
     stop(){
-        this.trackPlaying = false;
-        console.log("STOP");
-        console.log(this.trackPlaying);
+        if(this.trackPlaying){
+            this.trackPlaying = false;
+            this.player.unHighlightAll();
+            console.log("STOP");
+            console.log(this.trackPlaying);
+        }
     }
 
     start(){
-        this.trackPlaying = true;
-        this.player.resetLastTime();
-        this.player.resetStep();
-        console.log("START");
-        console.log(this.trackPlaying);
+        if(!this.trackPlaying){
+            this.trackPlaying = true;
+            this.player.resetLastTime();
+            this.player.resetStep();
+            console.log("START");
+            console.log(this.trackPlaying);
+        }
     }
 
     setPlayer(player){

@@ -2,7 +2,8 @@ class Player {
 
     constructor(master){
         this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
-        this.instrumentVols = document.querySelectorAll('#instrumentSeqs label input')
+        this.instrumentVols = document.querySelectorAll('#instrumentSeqs label input');
+        this.instrumentLabs = document.querySelectorAll('#instrumentSeqs label');
         this.master = master;
         this.lastTime = Date.now();
         this.step = 0;
@@ -47,6 +48,12 @@ class Player {
                 instrumentBoxes.push(instrumentDivs[divIndex].children[0]);
             }
             let instrumentBox = instrumentBoxes[step];
+            let toHighlight = this.instrumentLabs[i].children[2].children[step];
+            toHighlight.classList.add("playing");
+            let toUnHighlight = this.instrumentLabs[i].children[2].children[(this.beatsInfo.totalSteps+step-1)%this.beatsInfo.totalSteps];
+            toUnHighlight.classList.remove("playing");
+            
+
             if(instrumentBox.checked){
                 let audioNamePlural = this.instrumentSeqs[i].id
                 let audioNameSingular = audioNamePlural.slice(0,audioNamePlural.length-1);
@@ -58,6 +65,15 @@ class Player {
                 audio.currentTime = 0;
                 audio.volume = (0.01 * masterVol.value)*(0.01 * instrumentVol.value);
                 audio.play();
+            }
+        }
+    }
+
+    unHighlightAll(){
+        for(let i = 0; i < this.instrumentLabs.length; i++){
+            let toUnHighlight = this.instrumentLabs[i].children[2];
+            for(let j = 0; j < toUnHighlight.children.length; j++){
+                toUnHighlight.children[j].classList.remove("playing");
             }
         }
     }

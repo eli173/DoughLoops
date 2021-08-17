@@ -3,8 +3,14 @@ body {
      color: rgb(142, 93, 206)
 }
 
-label div {
+#instrumentSeqs label {
+    height: 31px;
+}
+
+#instrumentSeqs label div {
     display: flex;
+    position: absolute;
+    left: 300px;
 }
 
 
@@ -17,15 +23,22 @@ label div {
   font-size: 25px;  
 }
 
+/* Hide the default checkbox */  
+.container input {  
+  visibility: hidden;  
+  cursor: pointer;  
+}  
 
 /* Create a custom checkbox */  
 .mark {  
   position: absolute;  
   top: 0;  
   left: 0;  
-  height: 20px;  
-  width: 20px;  
-  background-color: lightgray;  
+  height: 29px;  
+  width: 29px;  
+  border-radius: 5px;
+  background-color: rgb(54, 0, 45);  
+  z-index: -1;
 }  
 
 label {
@@ -33,11 +46,22 @@ label {
 }
 
 .container {
-    border: 1px solid red;
+    border: 2px solid purple;
+    border-radius: 5px;
+}
+
+.offBeat {
+    border: 2px solid rgb(158, 63, 0);
+    border-radius: 5px;
+}
+
+.playing {
+    border: 2px solid rgb(0, 251, 42);
+    border-radius: 5px;
 }
 
 .container:hover input ~ .mark {  
-  background-color: gray;  
+  background-color: rgb(134, 65, 134);  
 }  
 
 .container input:checked ~ .mark {  
@@ -57,10 +81,12 @@ label {
 
 
 .volume {
+    position: absolute;
+    left: 80px;
     width: 70px;
 }
 
 select {
     position: absolute;
-    left: 30px;
+    left: 200px;
 }

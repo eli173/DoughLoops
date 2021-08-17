@@ -13,16 +13,19 @@ class BeatsInfo {
         this.player = player;
         this.gridMaker = gridMaker;
         this.gridMaker.updateGrid.bind(this.gridMaker)(this.numBeats.value, this.numSubDivs.value);
+        this.totalSteps = this.numBeats.value * this.numSubDivs.value;
     }
 
     updateBeats(){
         this.dispNumBeats.innerHTML = this.numBeats.value;
         this.gridMaker.updateGrid.bind(this.gridMaker)(this.numBeats.value,this.numSubDivs.value);
+        this.totalSteps = this.numBeats.value * this.numSubDivs.value;
     }
 
     updateSubDivs(){
         this.dispSubDivs.innerHTML = this.numSubDivs.value;
         this.gridMaker.updateGrid.bind(this.gridMaker)(this.numBeats.value, this.numSubDivs.value);
+        this.totalSteps = this.numBeats.value * this.numSubDivs.value;
     }
 
     updateTempo(){
