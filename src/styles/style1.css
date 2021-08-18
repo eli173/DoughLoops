@@ -9,6 +9,11 @@ body {
 #instrumentSeqs label {
     height: 31px;
     margin-bottom: 3px;
+    
+}
+
+#instrumentSeqs label > label{
+    margin-top: 6px;
 }
 
 #instrumentSeqs label div {
@@ -89,9 +94,11 @@ select {
     position: absolute;
     left: 200px;
     background-color: rgb(68, 11, 201);
+    border-color: rgb(113, 62, 255);
     border-radius: 3px;
     font-family: 'Georama', sans-serif;
-    color: white
+    color: white;
+    margin-top: 8px;
 }
 
 ul label input {

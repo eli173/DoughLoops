@@ -3,7 +3,7 @@ class Player {
     constructor(master){
         this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
         this.instrumentVols = document.querySelectorAll('#instrumentSeqs label input');
-        this.instrumentLabs = document.querySelectorAll('#instrumentSeqs label');
+        this.instrumentLabs = document.querySelectorAll('#instrumentSeqs > label');
         this.master = master;
         this.lastTime = Date.now();
         this.step = 0;
@@ -46,9 +46,9 @@ class Player {
                 instrumentBoxes.push(instrumentDivs[divIndex].children[0]);
             }
             let instrumentBox = instrumentBoxes[step];
-            let toHighlight = this.instrumentLabs[i].children[2].children[step];
+            let toHighlight = this.instrumentLabs[i].children[3].children[step];
             toHighlight.classList.add("playing");
-            let toUnHighlight = this.instrumentLabs[i].children[2].children[(this.beatsInfo.totalSteps+step-1)%this.beatsInfo.totalSteps];
+            let toUnHighlight = this.instrumentLabs[i].children[3].children[(this.beatsInfo.totalSteps+step-1)%this.beatsInfo.totalSteps];
             toUnHighlight.classList.remove("playing");
             
 
@@ -69,7 +69,7 @@ class Player {
 
     unHighlightAll(){
         for(let i = 0; i < this.instrumentLabs.length; i++){
-            let toUnHighlight = this.instrumentLabs[i].children[2];
+            let toUnHighlight = this.instrumentLabs[i].children[3];
             for(let j = 0; j < toUnHighlight.children.length; j++){
                 toUnHighlight.children[j].classList.remove("playing");
             }
