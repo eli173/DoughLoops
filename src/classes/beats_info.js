@@ -39,6 +39,11 @@ class BeatsInfo {
         this.dispMasterVol.innerHTML = this.masterVol.value;
     }
 
+    dispHelp(){
+        let helpButton = document.getElementById('helpButton');
+        helpButton.classList.toggle("showHelp");
+    }
+
 }
 
 export default BeatsInfo;

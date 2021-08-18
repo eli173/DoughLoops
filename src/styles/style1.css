@@ -1,9 +1,10 @@
 body {
     background-color: black;
     color: rgb(142, 93, 206);
-    font-family: 'Georama', sans-serif;
+    /* font-family: 'Georama', sans-serif; */
+    font-family: 'Rubik', sans-serif;
     text-shadow: 2px 2px 4px #3200bd;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 #instrumentSeqs label {
@@ -96,7 +97,8 @@ select {
     background-color: rgb(68, 11, 201);
     border-color: rgb(113, 62, 255);
     border-radius: 3px;
-    font-family: 'Georama', sans-serif;
+    /* font-family: 'Georama', sans-serif; */
+    font-family: 'Rubik', sans-serif;
     color: white;
     margin-top: 8px;
 }
@@ -117,7 +119,8 @@ ul {
 
 button {
   border-radius: 3px;
-  font-family: 'Georama', sans-serif;
+  /* font-family: 'Georama', sans-serif; */
+  font-family: 'Rubik', sans-serif;
 }
 
 #startButton{
@@ -162,7 +165,8 @@ button {
 
 img {
   position: absolute;
-  left: 400px;
+  left: 390px;
+  top: 0px;
   height: 200px;
   width: 370px;
 }

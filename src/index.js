@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     player.setBeatsInfo(beatsInfo);
     let stopButton = document.getElementById('stopButton');
     let startButton = document.getElementById('startButton');
+    let helpButton = document.getElementById('helpButton');
     stopButton.addEventListener('click', master.stop.bind(master));
     startButton.addEventListener('click', master.start.bind(master));
+    helpButton.addEventListener('click',beatsInfo.dispHelp.bind(beatsInfo));
     setInterval(player.playInstruments.bind(player),1);
 });
