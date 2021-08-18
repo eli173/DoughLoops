@@ -1,0 +1,172 @@
+body {
+    background-color: black;
+    color: rgb(142, 93, 206);
+    /* font-family: 'Georama', sans-serif; */
+    font-family: 'Rubik', sans-serif;
+    text-shadow: 2px 2px 4px #3200bd;
+    font-size: 17px;
+}
+
+#instrumentSeqs label {
+    height: 31px;
+    margin-bottom: 3px;
+    
+}
+
+#instrumentSeqs label > label{
+    margin-top: 6px;
+}
+
+#instrumentSeqs label div {
+    display: flex;
+    position: absolute;
+    left: 300px;
+}
+
+.container {  
+  display: block;  
+  position: relative;  
+  padding-left: 10px;  
+  margin-bottom: 20px;  
+  cursor: pointer;  
+  font-size: 25px;  
+}
+
+/* Hide the default checkbox */  
+.container input {  
+  visibility: hidden;  
+  cursor: pointer;  
+}  
+
+/* Create a custom checkbox */  
+.mark {  
+  position: absolute;  
+  top: 0;  
+  left: 0;  
+  height: 31px;  
+  width: 30px;  
+  border-radius: 2px;
+  background-color: rgb(54, 0, 45);  
+  z-index: -1;
+
+  box-shadow: -1px 2px 6px rgb(250, 0, 196) inset;
+
+}  
+
+label {
+    display: flex;
+}
+
+.container {
+    border: 2px solid purple;
+    border-radius: 5px;
+}
+
+.offBeat {
+    border: 2px solid rgb(189, 76, 1);
+    border-radius: 5px;
+}
+
+.playing {
+    border: 2px solid rgb(0, 251, 42);
+    border-radius: 5px;
+}
+
+.container:hover input ~ .mark {  
+  background-color: rgb(134, 65, 134);  
+}  
+
+.container input:checked ~ .mark {  
+  background-color: blue;  
+}  
+
+.container:hover input:checked ~ .mark {  
+  background-color: rgb(100, 100, 255);  
+}  
+
+
+.volume {
+    position: absolute;
+    left: 80px;
+    width: 85px;
+}
+
+select {
+    position: absolute;
+    left: 200px;
+    background-color: rgb(68, 11, 201);
+    border-color: rgb(113, 62, 255);
+    border-radius: 3px;
+    /* font-family: 'Georama', sans-serif; */
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    margin-top: 8px;
+}
+
+ul label input {
+    position: absolute;
+    left: 150px;
+}
+
+ul label div {
+    position: absolute;
+    left: 300px;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+button {
+  border-radius: 3px;
+  /* font-family: 'Georama', sans-serif; */
+  font-family: 'Rubik', sans-serif;
+}
+
+#startButton{
+  background-color: rgb(38, 255, 0);
+  border-color: rgb(0, 160, 0);
+}
+
+#stopButton{
+  background-color: red;
+  border-color: rgb(168, 0, 0);
+}
+
+.links {
+  display: block;
+}
+
+#evanCzako {
+  position: absolute;
+  top: 560px;
+  font-size: 30px;
+  color: rgb(214, 0, 186);
+  text-shadow: 1px 1px 2px #ffbb00;
+}
+
+.links a {
+  color: rgb(214, 0, 186);
+  text-shadow: 1px 1px 1px #ff00ff;
+  transition: color 1s, text-shadow 1s, font-size 1s;
+  font-size: 20px;
+}
+
+.links a:hover {
+  color: rgb(255, 103, 235);
+  text-shadow: 1px 1px 1px #ff5bb2;
+  font-size: 25px;
+}
+
+.links {
+  position: absolute;
+  top: 600px;
+}
+
+img {
+  position: absolute;
+  left: 390px;
+  top: 0px;
+  height: 200px;
+  width: 370px;
+}

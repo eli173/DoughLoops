@@ -1,0 +1,31 @@
+#helpButton {
+    position: absolute;
+    margin-left: 950px;
+    background-color: rgb(255, 0, 255);
+    border-color: rebeccapurple;
+    width: 50px;
+    height: 35px;
+}
+
+#helpPopUpText {
+    /* visibility: hidden; */
+    opacity: 0%;
+    width: 400px;
+    height: 133px;
+    padding: 5px;
+    background-color: rgb(156, 0, 218);
+    color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 2px #5c5c5c;
+    text-align: center;
+    border-radius: 6px;
+    margin-left: 775px;
+    margin-top: 40px;
+    position: absolute;
+    z-index: 1;
+    transition: opacity,1s;
+    
+}
+
+.showHelp ~ #helpPopUpText {
+    opacity: 100%;
+}
