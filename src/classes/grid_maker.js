@@ -1,7 +1,8 @@
 class GridMaker {
 
-    constructor(){
+    constructor(storage){
         this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
+        this.storage = storage;
     }
 
     updateGrid(numBeats,numSubDivs){
@@ -11,12 +12,20 @@ class GridMaker {
             for(let j = 0; j < numBeats; j++){
                 for(let k = 0; k < numSubDivs; k++){
                     var lab = document.createElement("label");
+                    let uniqueID = "gridID" + i.toString() + j.toString() + k.toString();
                     lab.classList.add("container");
                     if(j%2==1){
                         lab.classList.add("offBeat");
                     }
                     var box = document.createElement("INPUT");
+                    box.id = uniqueID;
                     box.setAttribute("type", "checkbox");
+                    let storageItem = this.storage;
+                    if (storageItem.getVal(uniqueID))
+                    {
+                        box.checked = storageItem.getVal(uniqueID);
+                    }
+                    box.addEventListener("change", function(){storageItem.setVal(uniqueID, this.checked); storageItem.saveToHash();});
                     var span = document.createElement("span");
                     span.classList.add("mark");
                     lab.appendChild(box);

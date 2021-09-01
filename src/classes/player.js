@@ -1,9 +1,36 @@
 class Player {
 
-    constructor(master){
+    constructor(storage, master){
         this.instrumentSeqs = document.querySelectorAll('#instrumentSeqs label div');
         this.instrumentVols = document.querySelectorAll('#instrumentSeqs label input');
         this.instrumentLabs = document.querySelectorAll('#instrumentSeqs > label');
+        this.instrumentSels = document.querySelectorAll('#instrumentSeqs > label > select');
+
+        for (let i = 0; i < this.instrumentSels.length; i++)
+        {
+            let selector = this.instrumentSels[i];
+
+            selector.addEventListener("change", function(){storage.setVal(selector.id, selector.value); storage.saveToHash();});
+
+            if (storage.getVal(selector.id))
+            {
+                selector.value = storage.getVal(selector.id);
+            }
+        }
+
+        for (let i = 0; i < this.instrumentVols.length; i++)
+        {
+            let volInput = this.instrumentVols[i];
+
+            volInput.addEventListener("change", function(){storage.setVal(volInput.id, volInput.value); storage.saveToHash();});
+
+            if (storage.getVal(volInput.id))
+            {
+                volInput.value = storage.getVal(volInput.id);
+            }
+            
+        }
+
         this.master = master;
         this.lastTime = Date.now();
         this.step = 0;
