@@ -3,35 +3,35 @@ class BeatsInfo {
     constructor(storage, player, gridMaker){
         this.numBeats = document.getElementById("numBeats");
         this.dispNumBeats = document.getElementById("dispNumBeats");
-        if (storage.getVal("numBeats")){
-            this.dispNumBeats.value = storage.getVal("numBeats");
-            this.dispNumBeats.innerHTML = storage.getVal("numBeats");
-            this.numBeats.value = storage.getVal("numBeats");
-            this.numBeats.innerHTML = storage.getVal("numBeats");
+        if (storage.getVal("nB")){
+            this.dispNumBeats.value = storage.getVal("nB");
+            this.dispNumBeats.innerHTML = storage.getVal("nB");
+            this.numBeats.value = storage.getVal("nB");
+            this.numBeats.innerHTML = storage.getVal("nB");
         }
         this.numSubDivs = document.getElementById("numSubDivs");
         this.dispSubDivs = document.getElementById("dispSubDivs");
-        if (storage.getVal("numSubDivs")){
-            this.numSubDivs.value = storage.getVal("numSubDivs");
-            this.numSubDivs.innerHTML = storage.getVal("numSubDivs");
-            this.dispSubDivs.value = storage.getVal("numSubDivs");
-            this.dispSubDivs.innerHTML = storage.getVal("numSubDivs");
+        if (storage.getVal("nS")){
+            this.numSubDivs.value = storage.getVal("nS");
+            this.numSubDivs.innerHTML = storage.getVal("nS");
+            this.dispSubDivs.value = storage.getVal("nS");
+            this.dispSubDivs.innerHTML = storage.getVal("nS");
         }
         this.tempo = document.getElementById("tempo");
         this.dispTempo = document.getElementById("dispTempo");
-        if (storage.getVal("tempo")){
-            this.tempo.value = storage.getVal("tempo");
-            this.tempo.innerHTML = storage.getVal("tempo");
-            this.dispTempo.value = storage.getVal("tempo");
-            this.dispTempo.innerHTML = storage.getVal("tempo");
+        if (storage.getVal("t")){
+            this.tempo.value = storage.getVal("t");
+            this.tempo.innerHTML = storage.getVal("t");
+            this.dispTempo.value = storage.getVal("t");
+            this.dispTempo.innerHTML = storage.getVal("t");
         }
         this.masterVol = document.getElementById("masterVol");
         this.dispMasterVol = document.getElementById("dispMasterVol")
-        if (storage.getVal("masterVol")){
-            this.masterVol.value = storage.getVal("masterVol");
-            this.masterVol.innerHTML = storage.getVal("masterVol");
-            this.dispMasterVol.value = storage.getVal("masterVol");
-            this.dispMasterVol.innerHTML = storage.getVal("masterVol");
+        if (storage.getVal("mV")){
+            this.masterVol.value = storage.getVal("mV");
+            this.masterVol.innerHTML = storage.getVal("mV");
+            this.dispMasterVol.value = storage.getVal("mV");
+            this.dispMasterVol.innerHTML = storage.getVal("mV");
         }
 
         this.numBeats.addEventListener("input",this.updateBeats.bind(this));
@@ -49,7 +49,7 @@ class BeatsInfo {
         this.dispNumBeats.innerHTML = this.numBeats.value;
         this.gridMaker.updateGrid.bind(this.gridMaker)(this.numBeats.value,this.numSubDivs.value);
         this.totalSteps = this.numBeats.value * this.numSubDivs.value;
-        this.storage.setVal("numBeats", this.numBeats.value);
+        this.storage.setVal("nB", this.numBeats.value);
         this.storage.saveToHash();
     }
 
@@ -57,19 +57,19 @@ class BeatsInfo {
         this.dispSubDivs.innerHTML = this.numSubDivs.value;
         this.gridMaker.updateGrid.bind(this.gridMaker)(this.numBeats.value, this.numSubDivs.value);
         this.totalSteps = this.numBeats.value * this.numSubDivs.value;
-        this.storage.setVal("numSubDivs", this.numSubDivs.value);
+        this.storage.setVal("nS", this.numSubDivs.value);
         this.storage.saveToHash();
     }
 
     updateTempo(){
         this.dispTempo.innerHTML = this.tempo.value;
-        this.storage.setVal("tempo", this.tempo.value);
+        this.storage.setVal("t", this.tempo.value);
         this.storage.saveToHash();
     }
 
     updateMasterVolume(){
         this.dispMasterVol.innerHTML = this.masterVol.value;
-        this.storage.setVal("masterVol", this.masterVol.value);
+        this.storage.setVal("mV", this.masterVol.value);
         this.storage.saveToHash();
     }
 

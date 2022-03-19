@@ -17,9 +17,9 @@ class Storage {
     saveToHash()
     {
         let dString = JSON.stringify(this.storageDict);
-        let b64str = btoa(dString);
+				let lzs = LZString.compressToBase64(dString);
         let docURL = new URL(document.URL);
-        docURL.hash = '#' + b64str;
+        docURL.hash = '#' + lzs;
         let newURL = docURL.href;
         document.location.href = newURL;
 
@@ -31,7 +31,8 @@ class Storage {
         if (dString && dString.length > 0)
         {
             try{
-                this.storageDict = JSON.parse(atob(dString));
+								let s = LZString.decompressFromBase64(dString)
+                this.storageDict = JSON.parse(s);
             } 
             catch
             {

@@ -82,11 +82,52 @@ class Player {
             if(instrumentBox.checked){
                 let audioNamePlural = this.instrumentSeqs[i].id
                 let audioNameSingular = audioNamePlural.slice(0,audioNamePlural.length-1);
+								var instrumentVolTagName = null;
+								var audioSelectorTagName = null;
+								switch(audioNamePlural) {
+								case "kicks":
+										instrumentVolTagName = "kV";
+										audioSelectorTagName = "kS";
+										break;
+								case "claps":
+										instrumentVolTagName = "cV";
+										audioSelectorTagName = "cS";
+										break;
+								case "snares":
+										instrumentVolTagName = "sV";
+										audioSelectorTagName = "sS";
+										break;
+								case "hats":
+										instrumentVolTagName = "hV";
+										audioSelectorTagName = "hS";
+										break;
+								case "rims":
+										instrumentVolTagName = "rV";
+										audioSelectorTagName = "rS";
+										break;
+								case "toms":
+										instrumentVolTagName = "tV";
+										audioSelectorTagName = "tS";
+										break;
+								case "cymbals":
+										instrumentVolTagName = "yV";
+										audioSelectorTagName = "yS";
+										break;
+								case "triangles":
+										instrumentVolTagName = "gV";
+										audioSelectorTagName = "gS";
+										break;
+								default:
+										instrumentVolTagName = "kV";
+										audioSelectorTagName = "kS";
+										break;
+								}
+								
                 let audioName = audioNamePlural.slice(0, audioNamePlural.length-1)+'1';
-                let audioSelector = document.getElementById(`${audioNameSingular}Selector`);
+                let audioSelector = document.getElementById(audioSelectorTagName);
                 var audio = document.getElementById(`${audioSelector.value}`);
                 var masterVol = document.getElementById('masterVol');
-                var instrumentVol = document.getElementById(`${audioNameSingular}Vol`);
+                var instrumentVol = document.getElementById(instrumentVolTagName);
                 audio.currentTime = 0;
                 audio.volume = (0.01 * masterVol.value)*(0.01 * instrumentVol.value);
                 audio.play();
